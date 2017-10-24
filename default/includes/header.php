@@ -53,9 +53,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/default.css" />
+	<link rel="stylesheet" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/vektortheme.css" />
 	<link rel="icon" type="image/icon" href="/<?php echo $this->data['baseurlpath']; ?>resources/icons/favicon.ico" />
-
+	<script src="/<?php echo $this->data['baseurlpath']; ?>resources/vektortheme.js"></script>
 <?php
 
 if(!empty($jquery)) {
@@ -124,16 +124,9 @@ if($onLoad !== '') {
 
 <div id="wrap">
 	
-	<div id="header">
-		<h1><a style="text-decoration: none; color: white" href="/<?php echo $this->data['baseurlpath']; ?>"><?php 
-			echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp');
-		?></a></h1>
-	</div>
-
+	<?php
 	
-	<?php 
-	
-	$includeLanguageBar = TRUE;
+	$includeLanguageBar = FALSE;
 	if (!empty($_POST)) 
 		$includeLanguageBar = FALSE;
 	if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE) 
@@ -205,13 +198,3 @@ if($onLoad !== '') {
 
 	?>
 	<div id="content">
-
-
-
-<?php
-
-if(!empty($this->data['htmlinject']['htmlContentPre'])) {
-	foreach($this->data['htmlinject']['htmlContentPre'] AS $c) {
-		echo $c;
-	}
-}
