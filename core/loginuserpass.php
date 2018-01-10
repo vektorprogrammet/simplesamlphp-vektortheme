@@ -14,7 +14,7 @@ $this->includeAtTemplateBase('includes/header.php');
         <img src="/<?php echo $this->data['baseurlpath']; ?>resources/vektor-logo.png" class="logo">
 
         <form action="?" method="post" name="f">
-            <label for="username">Brukernavn</label>
+            <label for="username">Brukernavn / e-post</label>
             <input
                 type="text"
                 name="username"
